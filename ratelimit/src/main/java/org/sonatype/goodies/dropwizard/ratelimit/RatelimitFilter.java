@@ -81,6 +81,7 @@ public class RatelimitFilter
       chain.doFilter(request, response);
     }
     else {
+      // TODO: consider better options for response generation
       response.sendError(TOO_MANY_REQUESTS.getStatusCode(), TOO_MANY_REQUESTS.getReasonPhrase());
     }
   }
